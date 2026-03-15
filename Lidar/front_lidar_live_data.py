@@ -18,7 +18,7 @@ ETX = "\x03"
 
 LIDARS_CONFIG = [
     {
-        "ip": "195.37.48.222",
+        "ip": "195.37.48.222", # use based on lidar IP address
         "port": 2111,
         "color": (0, 200, 255),
         "dx": 0.0,
@@ -151,8 +151,10 @@ class LidarClient(QtCore.QObject):
 # ================================================================
 
 def add_circular_fan(plot):
+    #angle range for 270 degree FOV (from -45 to +225 degrees)
     FOV_MIN_DEG = -45
     FOV_MAX_DEG = 225
+    #distance 
     R_MIN = 0.5
     R_MAX = 25.0
 
